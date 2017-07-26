@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Events api</title>
+    <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid" style="margin:15px">
+
+        <div class="row" style="border: 0px solid red">
+            <div class="col-md-12">
+                <h1 style="color:white; text-align:center;">Events to attend</h1>
+            </div>
+        </div>
+
+        <div class="row" style="border: 0px solid blue; margin-bottom:10px;">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs col-md-12 navlists row">
+                    <li class="navlist"><a class="searchBy" href="#zip">Zip Code</a></a>
+                    </li>
+                    <li class="navlist"><a class="searchBy" href="#category">Keywords</a></a>
+                    </li>
+                    <li class="navlist"><a class="searchBy" href="#calendar">Calendar</a></a>
+                    </li>
+                    <li class="navlist"><a class="searchBy" href="#city">City</a></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <form>
+            <div class="row" style="border: 0px solid yellow; margin-bottom:10px;">
+                <div class="col-md-12">
+                    <div class="col-md-8">
+                        <input type="text" id="searchText" placeholder="Enter location like zip, city or statename (ex: California)"></input>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" id="searchBtn" class="btn btn-primary btn-lg" style="width:100%">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="row" style="border: 0px solid green">
+
+            <div class="col-md-2" style="border: 1px solid cyan; color:white;">
+                <div>Filter By Category</div>
+                <div>
+                    <ul class="list-group" id="categories">
+                        <li class="category"><a href="#" class="list-group-item" value="Art Galleries &amp; Exhibits">Art Galleries &amp; Exhibits</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Concerts &amp; Tour Dates</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Conferences &amp; Tradeshows</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Comedy</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Education</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Kids &amp; Family</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Festivals</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Film</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Food &amp; Wine</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Fundraising &amp; Charity</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Health &amp; Wellness</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Holiday</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Literary &amp; Books</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Museums &amp; Attractions</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Neighborhood</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Business &amp; Networking</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Nightlife &amp; Single</a></li>
+                        <li class="category"><a href="#" class="list-group-item">University &amp; Alumni</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Organizations &amp; Meetups</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Outdoors &amp; Recreation</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Performing Arts</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Pets</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Politics &amp; Activism</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Sales &amp; Retail</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Science</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Religion &amp; Spirituality</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Sports</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Technology</a></li>
+                        <li class="category"><a href="#" class="list-group-item">Other &amp; Miscellaneous</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-10" style="border: 1px solid gray; color:white;">
+                <div>results show here</div>
+                <div>
+                    <div class="row" style="border: 1px solid blue; height:300px;">
+                        <div class="col-md-3" style="border: 1px solid red; color:white;" id="image">
+                            <img src="ml.jpg" style="height:300px; width:100%;">
+                            <!--took from maglook  -->
+                            <!-- <a href="this.url" target="_blank">
+                            <img src="" id="img">
+                            <div>event image</div>
+                        </a> -->
+                            <!--end maglook  -->
+                        </div>
+                        <div class="col-md-9" style="border: 1px solid gray; color:yellow; height:300px; overflow-y: scroll;">
+                            <div id="title" style=" padding:4px;">title</div>
+                            <div id="date">When: </div>
+                            <div id="description" style=" padding:4px; overflow-y: scroll; height:120px; margin-bottom:15px;border: 1px solid gray; color:yellow">Description</div>
+                            <div id="eventUrl">More info Here:</div>
+                            <div id="venue">Where</div>
+                            <div id="venueAdd" style="padding-left:2px;"> Address:</div>
+                            <div id="cityName" style="padding-left:2px;"> City:</div>
+                            <!-- <div id="geocode"> Zip:</div><br> -->
+                            <div id="venue_url"> Venue link:</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--Logic.js-->
+        <script src="logic.js"></script>
+
+</body>
+
+</html>
+
+
+<!-- <div id="article" class="subject-article-box animated ">
+                            <a href= "{{this.url}}" target="_blank" class="subject-article-link">
+                                <img src= "{{this.image_url}}" class="subject-article-img">
+                                <div class="subject-article-description">{{this.description}}</div> 
+                            </a>
+                            <div class="subject-article-like-box"  >
+                                <a href="/like/{{id}}">
+                                <form action="/users/" method="POST">
+
+                                    <img action="/likes/" method="POST" class="subject-article-like" src="http://www.freeiconspng.com/uploads/heart-png-15.png"/>
+                                    
+                                </a>
+                            </div>  
+                        </div> -->

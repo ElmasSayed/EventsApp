@@ -1,0 +1,10 @@
+ search text
+ var URL = "http://api.eventful.com/json/events/search?app_key=SS64KtgmxNNMgC94&location=" + searchText + "&date=Future?"
+
+
+ category search:
+ https://api.eventful.com/json/events/search?comedy&date=Future&app_key=SS64KtgmxNNMgC94
+    
+
+    chk this:
+    http://api.eventful.com/json/events/search?include=categories&app_key=SS64KtgmxNNMgC94&location=91304&category=film&date=Future?
