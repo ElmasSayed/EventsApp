@@ -24,17 +24,26 @@ $('#searchBtn').click(function() {
             console.log(data.events.event[i].title);
             var html = "";
             html += "<div class='container-fluid' style='margin-bottom:10px;'>";
-            html += "<div class='row' style='border: 1px solid ; height:300px;'>";
+            html += "<div class='row' style='border-bottom: .5px solid ; height:225;'>";
             html += "   <div class='col-md-3' style='border: 0px solid ; color:white;' id='image'>";
-            html += "       <img src='" + data.events.event[i].image.medium.url + "' style='height:290px; width:100%;margin:3px;'>";
+            html += "       <img src='" + data.events.event[i].image.medium.url + "' style='height:220px; width:100%;margin:3px;'>";
             html += "   </div>";
-            html += "   <div class='col-md-9' style='border: 1px solid gray; color:lightgray; height:300px; overflow-y: scroll;'>";
-            html += "       <div style=' padding:10px;'><span style='font-size:18px;font-family:impact;color:lightgray;'>" + data.events.event[i].title + "</span></div>";
-            html += "       <div id='eventUrl'><a href='" + data.events.event[i].url + "'>More Info Here</a></div>";
-            html += "       <div id='date'>When:<span>" + data.events.event[i].start_time + "</span></div>";
-            html += "       <div id='venue'>Where :<span>" + data.events.event[i].venue_name + ", " + data.events.event[i].city_name + " " + ((data.events.event[i].postal_code == null) ? "" : data.events.event[i].postal_code) + "</span></div>";
-            html += "       <div id='venue_url' style='margin-bottom:17px;'><a href='" + data.events.event[i].venue_url + "'>Venue Details</a></div>";
-            html += "       <div id='description' style='padding:4px; overflow-y: scroll; width:90%; height:120px; color:lightgray; margin-bottom:8px;border: 1px solid gray; color:white; border-radius:5px;'>Description :<span>" + data.events.event[i].description + "</span></div>"
+            html += "   <div class='col-md-9' style='border: 0px solid gray; color:lightgray; height:225px; overflow-y: scroll;'>";
+            html += "               <div style=' padding:0px;'><span style='font-size:18px;font-family:Graduate,cursive;color:lightgray;margin-top:25px;'>" + data.events.event[i].title + "</span></div>";
+            html += "       <div class='row'>";
+            html += "            <div class='col-md-4'>";
+            html += "               <div id='date'><span>" + data.events.event[i].start_time + "</span></div>";
+            html += "               <div id='eventUrl'  target='_blank'><a href='" + data.events.event[i].url + "'>More Info Here</a></div>";
+            html += "           </div>";
+
+            html += "           <div class='class='col-md-8' >";
+            html += "                <div id='venue'><span>" + data.events.event[i].venue_name + ", " + data.events.event[i].city_name + " " + ((data.events.event[i].postal_code == null) ? "" : data.events.event[i].postal_code) + "</span></div>";
+            html += "               <div id='venue_url' style='margin-bottom:10px;'  target='_blank'><span><a href='" + data.events.event[i].venue_url + "'>Venue Details</span></a></div>";
+
+            html += "           </div>";
+            html += "       <div id='description' style='padding:4px; overflow-y: scroll auto; width:90%; height:120px; color:lightgray; margin-bottom:8px;border: 0px solid gray; color:white; border-radius:5px;'><span>" + data.events.event[i].description + "</span></div>"
+            html += "     </div>";
+
             html += "   </div>";
             html += "</div>";
             html += "</div>";
@@ -53,6 +62,10 @@ $('#searchBtn').click(function() {
         // $('#cityName').html(data.events.event[0].city_name);
         // $('#geocode').html(data.events.event[0].geocode_type);
         // $('#venue_url').html(data.events.event[0].venue_url);
+
+        // var randomDate = "02/23/1999";
+        // var convertedDate = moment(new Date(randomDate));
+        // (moment(convertedDate).format("MM/DD/YY"));
     });
 }); //search button click event end
 // ___________________________________________________________________________________________________________________________

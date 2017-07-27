@@ -13,31 +13,29 @@ body {
     height: 40px;
 }
 
-.display {
+
+/* .display {
     background-color: white;
     border: solid;
     border-color: white;
     /* height: 1500px; */
-}
 
-.category {
+
+}
+*/ .category {
     list-style: none;
     margin-top: 1px;
 }
-
 .nav {
     display: inline-block;
 }
-
 .navlist {
     color: white;
     width: 25%;
 }
-
 .searchBy {
     color: white;
 }
-
 
 /* .main {
     margin-top: 20px;
