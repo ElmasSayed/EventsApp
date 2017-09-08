@@ -23,13 +23,13 @@ $('#searchBtn').click(function() {
         for (i = 0; i < data.events.event.length; i++) {
             console.log(data.events.event[i].title);
             var html = "";
-            html += "<div class='container-fluid' style='margin-bottom:10px;'>";
-            html += "<div class='row' style='border-bottom: .5px solid ; height:225;'>";
+            html += "<div class='container-fluid'>";
+            html += "<div class='row' style='border-top: .5px solid ; height:200;;padding-top:8px'>";
             html += "   <div class='col-md-3' style='border: 0px solid ; color:white;' id='image'>";
             html += "       <img src='" + data.events.event[i].image.medium.url + "' style='height:220px; width:100%;margin:3px;'>";
             html += "   </div>";
-            html += "   <div class='col-md-9' style='border: 0px solid gray; color:lightgray; height:225px; overflow-y: scroll;'>";
-            html += "               <div style=' padding:0px;'><span style='font-size:18px;font-family:Graduate,cursive;color:lightgray;margin-top:25px;'>" + data.events.event[i].title + "</span></div>";
+            html += "   <div class='col-md-9' style='border: 0px solid gray; color:lightgray; height:200px;'>";
+            html += "               <div style='padding:0px;'><span style='font-size:20px;color:#008000;font-family:Graduate,cursive;margin-top:25px;'>" + data.events.event[i].title + "</span></div>";
             html += "       <div class='row'>";
             html += "            <div class='col-md-4'>";
             html += "               <div id='date'><span>" + data.events.event[i].start_time + "</span></div>";
@@ -41,7 +41,7 @@ $('#searchBtn').click(function() {
             html += "               <div id='venue_url' style='margin-bottom:10px;'  target='_blank'><span><a href='" + data.events.event[i].venue_url + "'>Venue Details</span></a></div>";
 
             html += "           </div>";
-            html += "       <div id='description' style='padding:4px; overflow-y: scroll auto; width:90%; height:120px; color:lightgray; margin-bottom:8px;border: 0px solid gray; color:white; border-radius:5px;'><span>" + data.events.event[i].description + "</span></div>"
+            html += "       <div id='description' style='padding:4px; overflow-y: scroll ; width:90%; height:120px; color:lightgray; margin-bottom:8px;border: 0px solid gray; color:white; border-radius:5px;'><span>" + data.events.event[i].description + "</span></div>"
             html += "     </div>";
 
             html += "   </div>";
